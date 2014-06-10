@@ -2,7 +2,7 @@ TodosDetailController = RouteController.extend({
 	
   waitOn: function () {
   	var id = this.params._id;
-  	Meteor.subscribe('todos_detail', id)
+  	Meteor.subscribe('todos_detail', this.params._id);
   },
 
   data: function () {
@@ -11,7 +11,6 @@ TodosDetailController = RouteController.extend({
   },
 
   action: function () {
-  	this.layout('NoBreadcrumbs')
-    this.render();
+  	this.render();
   }
 });
